@@ -12,7 +12,7 @@
             <% if (locals.errors && errors.length > 0) { %>
                 <p><strong>Error in form submission.</strong></p>
                 <% errors.forEach(error => { %>
-                    <p><em><%= error %></em></p>
+                    <p class="error-msg"><em><%= error %></em></p>
                 <% }) %>
             <% } %>
             <!-- Contact Info Fieldset -->
@@ -22,14 +22,12 @@
                     <div class="row-box">
                         <label for="fname">First Name</label>
                         <input type="text" name="fname" id="fname">
-                        <span class="error-msg" id="error-f-name">Please enter your first name.</span>
                     </div>
                     
                     <!-- Last name field -->
                     <div class="row-box">
                         <label for="lname">Last Name</label>
                         <input type="text" name="lname" id="lname">
-                        <span class="error-msg" id="error-l-name">Please enter your last name.</span>
                     </div>
 
                     <!-- Job Title field -->
@@ -53,14 +51,12 @@
                     <div class="row-box">
                         <label for="linkedIn">LinkedIn URL</label>
                         <input type="text" name="linkedIn" id="linkedIn">
-                        <span class="error-msg" id="error-li">Please enter a valid LinkedIn URL.</span>
                     </div>
                     
                     <!-- Email field -->
                     <div class="row-box">
                         <label for="email">Email Address</label>
                         <input type="email" name="email" id="email">
-                        <span class="error-msg" id="error-email">Please enter a valid email.</span>
                     </div>
                 </div>
             </fieldset>
@@ -84,7 +80,6 @@
                         <input type="text" name="meetOther" id="meetOther">
                     </div>
                 </div>
-                <span class="error-msg" id="error-meet">Please fill in <em>one</em> of the above fields.</span>
             </fieldset>
 
             <fieldset id="other-field">
@@ -109,7 +104,6 @@
                         Text
                     </label>   
                 </div> 
-                <span class="error-msg" id="error-format">Please select <em>one</em> of the above formats.</span>
             </fieldset>
 
             <!-- Submit button -->

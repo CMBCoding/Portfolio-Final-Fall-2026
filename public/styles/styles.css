@@ -100,12 +100,8 @@ a:hover, a:focus {
     align-items: center;
 }
 
-.spacer,
-.error-msg {
+.spacer {
     visibility: hidden;
-    width: 100%;
-    margin: 0.25rem 0;
-    padding: 0.25rem;
 }
 
 #contact-info,
@@ -263,6 +259,9 @@ legend, #login-error {
 }
 
 .error-msg {
+    width: 18.125rem;
+    margin: 0.25rem 0;
+    padding: 0.25rem;
     text-align: left;
     background-color:var(--carolina-blue);
     color: var(--midnight-whisper);
@@ -684,9 +683,8 @@ button[type="submit"] {
     }
 
     .error-msg {
-        visibility: hidden;
-        align-self: baseline;
-        max-width: 9.313rem;
+        width: 31rem;
+        text-align: center;
         margin: 0.5rem;
     }
 
@@ -854,14 +852,13 @@ button[type="submit"] {
 
     #meet-info > .error-msg, 
     #other-field > #error-format {
-        max-width: 52.75rem;
+        width: 52.75rem;
         margin: 0.5rem;
     }
 
     .error-msg {
-        visibility: hidden;
         margin: 0.25rem 1rem 0.5rem 0.75rem;
-        max-width: 16.25rem;
+        width: 53.25rem;
         margin: 0.5rem;
     }
 
