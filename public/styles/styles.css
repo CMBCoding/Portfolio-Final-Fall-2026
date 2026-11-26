@@ -110,7 +110,8 @@ a:hover, a:focus {
 
 #contact-info,
 #meet-info,
-#other-field {
+#other-field,
+#login-field {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +124,13 @@ a:hover, a:focus {
 
 fieldset {
     border: none;
+}
+
+label {
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-align: left;
 }
 
 #contact-form {
@@ -181,6 +189,7 @@ label {
 }
 
 input[type="text"],
+input[type="password"],
 input[type="email"],
 #meet-other {
     width: 18.125rem;
@@ -203,6 +212,43 @@ select {
 textarea {
     border: var(--field-border);
     border-radius: var(--curb);
+}
+
+/* Login Page Stylings */
+#login-field, #login-error {
+    margin: 5rem auto;
+    width: 20.75rem;
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
+}
+
+legend, #login-error {
+    background-color: var(--carolina-blue);
+    color: var(--midnight-whisper);
+    margin: 1rem auto;
+    width: 18.125rem;
+    height: 2rem;
+    border-radius: var(--curb);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-error {
+    box-shadow: none;
+}
+
+#login-field input[type="text"],
+#login-field input[type="password"],
+#login-field input[type="email"], 
+#login-field label {
+    width: 100%;
+    margin: 0.25rem 0 1.25rem 0;
+}
+
+#login-field label { 
+    margin: 0.5rem 0 0 0;
 }
 
 /* Error Message Stylings */

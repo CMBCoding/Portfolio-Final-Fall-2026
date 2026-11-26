@@ -1,5 +1,7 @@
 /* Import the node express module */
 import express from 'express';
+/* Import express sessiosn */
+import session from 'express-session';
 /* Import the mysql2 module */
 import mysql2 from 'mysql2'
 /* Import the donenve module */
@@ -29,8 +31,27 @@ app.set('view engine', 'ejs');
 //Add middleware for the app
 app.use(express.urlencoded({extended: true}));
 
+//Create sessions middleware
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {maxAge: 1000 * 60 * 66}
+}));
+
 //Array to hold contact info
 const contacts = [];
+
+//Login method that takes in a login request, response and next.
+function requireLogin(req, res, next) {
+    //If the user is logged in, send them forward
+    if (req.session.loggedIn) {
+        next();
+    } else {
+    //Else, redirect back to the login page
+        res.redirect('/login')
+    }
+}
 
 //Define the default route ("/")
 app.get('/', (req, res) => {
@@ -46,10 +67,32 @@ app.get('/confirm', (req, res) => {
 //Add a route to the contact page
 app.get('/contact', (req, res) => {
     res.render('contact', {title : 'Portfolio - Contact Form'})
-})
+});
+
+//Add a route to the login page
+app.get('/login', (req, res) => {
+    res.render('login', {error: null, title: 'Portfolio - Login'});
+});
+
+//Add login user and password check to the login page
+app.post('/login', (req, res) => {
+    //Pull out the values from the user submitted username and password
+    const username = req.body.login_user;
+    const password = req.body.login_pwd;
+
+    //Compare the user submitted username and password with those stored in the .env file
+    if (username === process.env.ADMIN_USER && password === process.env.ADMIN_PASSWORD) {
+        //If both match, then log the user in
+        req.session.loggedIn = true;
+        res.redirect('/admin');
+    } else {
+        //If they do not, redirect to the login page and display the error message.
+        res.render('login', {error: 'Invalid username or password', title: 'Portfolio - Login' });
+    }
+});
 
 //Add a route to the admin page
-app.get('/admin', async(req, res) => {
+app.get('/admin', requireLogin, async(req, res) => {
     try {
         //Attempt to fetch the contacts table from the database
         const contacts = await pool.query(`SELECT * FROM Contacts ORDER BY id DESC`);
@@ -61,17 +104,17 @@ app.get('/admin', async(req, res) => {
         console.log("Database error", error);
         res.status(500).send(`Database error ${error.message}`) 
     }
-})
+});
 
 //Add a route to the resume page
 app.get('/resume', (req, res) => {
     res.render('resume', {title: 'Porfolio - Resume'})
-})
+});
 
 //Add a route to the porfolio page
 app.get('/portfolio', (req, res) => {
     res.render('portfolio', {title: 'Porfolio - Projects'})
-})
+});
 
 //Post the data from the contacts page into the admin pages
 app.post('/confirm', async(req, res) => {
@@ -121,4 +164,4 @@ app.post('/confirm', async(req, res) => {
 //Start a server in the designated port
 app.listen(PORT, () => {
     console.log(`Server running in port http://localhost:${PORT}`);
-})
+});
