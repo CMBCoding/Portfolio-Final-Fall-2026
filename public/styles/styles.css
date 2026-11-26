@@ -789,6 +789,20 @@ button[type="submit"] {
     .proj-tech-list {
         flex-direction: row;
     }
+
+    /* Login Page Stylings */
+    legend, button[type="submit"] {
+        width: 18.75rem; 
+        height: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #login-error {
+        width: 18.75rem;
+    }
 }
 
 /* Responsive Stylings - Half-width and Tablet screens - Supplemental */
@@ -907,7 +921,6 @@ button[type="submit"] {
     }
 
     /* Project Page Stylings */
-
     .projects-tile {
         width: 52.375rem;
     }
@@ -915,6 +928,36 @@ button[type="submit"] {
     .projects-tile > .proj-img {
         border: solid 1px var(--carolina-blue);
         max-width: 53.75rem;
+    }
+
+    /* Login Page Stylings */
+    #login-field {
+        align-items: center;
+    }
+
+    legend, button[type="submit"] {
+        width: 20.75rem; 
+    }
+
+    #login-field  button[type="submit"] {
+        font-size: 1.25rem;
+        height: 2rem;
+    }
+
+    #login-field {
+        width: 40rem;
+    }
+
+    #login-error {
+        width: 20.75rem;
+    }
+
+    #login-field input[type="text"],
+    #login-field input[type="password"],
+    #login-field input[type="email"], 
+    #login-field label,
+    legend {
+        width: 20.75rem;
     }
 }
 
