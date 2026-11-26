@@ -9,7 +9,12 @@
     <main id="contact-main" class="gothic-thin">
         <!-- Form -->
         <form action="/confirm" method="post" id="contact-form">
-
+            <% if (errors) { %>
+                <p><strong>Error in form submission.</strong></p>
+                <% errors.forEach(error => { %>
+                    <p><em><%= error %></em></p>
+                <% }) %>
+            <% } %>
             <!-- Contact Info Fieldset -->
             <fieldset id="contact-info">
                 <!-- First Name field -->

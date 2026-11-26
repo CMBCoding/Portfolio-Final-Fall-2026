@@ -4,6 +4,8 @@ import express from 'express';
 import session from 'express-session';
 /* Import the mysql2 module */
 import mysql2 from 'mysql2'
+/* Import validation.js script for server-side validation */
+import { validateFormData } from './public/scripts/validation.js';
 /* Import the donenve module */
 import dotnev from 'dotenv'
 dotnev.config();
@@ -66,7 +68,7 @@ app.get('/confirm', (req, res) => {
 
 //Add a route to the contact page
 app.get('/contact', (req, res) => {
-    res.render('contact', {title : 'Portfolio - Contact Form'})
+    res.render('contact', { errors: [], title: 'Portfolio - Contact'})
 });
 
 //Add a route to the login page
@@ -121,8 +123,17 @@ app.post('/confirm', async(req, res) => {
     try {    
         console.log(req.body);
 
-    //Create a JSON object to store the data from each submission from the contacts posting
+        //Create a JSON object to store the data from each submission from the contacts posting
         const contact = req.body;
+        //Validate the data on the servers
+        const valid = validateFormData(contact);
+
+        //If the data is not valid..
+        if (!valid.isValid) {
+            console.log(valid); //Log an error
+            res.render('contact', { errors: valid.errors, title: 'Portfolio - Contact'}) //Reroute back the contact form
+            return; //Halt execution via a return statement.
+        }
 
         //Pull out and use one meeting vector to store to the DB.
         if (contact.meetList && contact.meetList !== 'none') {
