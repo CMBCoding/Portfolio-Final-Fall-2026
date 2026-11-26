@@ -565,7 +565,7 @@ button[type="submit"] {
 
 .proj-tech-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0;
     width: 100%;
     margin: 0.25rem auto;
@@ -616,6 +616,10 @@ button[type="submit"] {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+
+    .nav-links {
+        margin: 0.75rem 0.4rem;
     }
 
     .row {
@@ -733,6 +737,11 @@ button[type="submit"] {
 
     #certs > li {
         font-size: 16px;
+    }
+
+    /* Project Page Stylings */
+    .proj-tech-list {
+        flex-direction: row;
     }
 }
 
