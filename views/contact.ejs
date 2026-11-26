@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+    <header id="header">
+        <h1 class="gothic">Contact Form</h1>
+        <%- include('partials/nav.ejs') %>
+    </header>
+    <main id="contact-main" class="gothic-thin">
+        <!-- Form -->
+        <form action="/confirm" method="post" id="contact-form">
+
+            <!-- Contact Info Fieldset -->
+            <fieldset id="contact-info">
+                <!-- First Name field -->
+                <div class="row">
+                    <div class="row-box">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" id="fname">
+                        <span class="error-msg" id="error-f-name">Please enter your first name.</span>
+                    </div>
+                    
+                    <!-- Last name field -->
+                    <div class="row-box">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" id="lname">
+                        <span class="error-msg" id="error-l-name">Please enter your last name.</span>
+                    </div>
+
+                    <!-- Job Title field -->
+                    <div class="row-box">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" name="jobTitle" id="jobTitle">
+                        <span class="spacer">spacer</span>
+                        <!-- <span class="error-msg">Please enter your job title.</span> -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Company field -->
+                    <div class="row-box">
+                        <label for="company">Company</label>
+                        <input type="text" name="company" id="company">
+                        <span class="spacer">spacer</span>
+                    </div>
+                    
+                    <!-- LinkedIn URL field -->
+                    <div class="row-box">
+                        <label for="linkedIn">LinkedIn URL</label>
+                        <input type="text" name="linkedIn" id="linkedIn">
+                        <span class="error-msg" id="error-li">Please enter a valid LinkedIn URL.</span>
+                    </div>
+                    
+                    <!-- Email field -->
+                    <div class="row-box">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email">
+                        <span class="error-msg" id="error-email">Please enter a valid email.</span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Meeting Info Fieldset -->
+            <fieldset id="meet-info">
+                <!-- Select list for possible methods of meeting -->
+                <div class="row">
+                    <div class="row-box">
+                        <label for="meetList" id="meetList-label">How did we meet?</label>
+                        <select name="meetList" id="meetList">
+                            <option value="none">Please select</option>
+                            <option value="In person">In person</option>
+                            <option value="Through an associate">Through an associate</option>
+                            <option value="Through social media">Through social media</option>
+                        </select>
+                    </div>
+                    <!-- Text field of alternative method of meeting -->
+                    <div class="row-box">
+                        <label for="meetOther" id="meetOther-label">Other (please specify)</label>
+                        <input type="text" name="meetOther" id="meetOther">
+                    </div>
+                </div>
+                <span class="error-msg" id="error-meet">Please fill in <em>one</em> of the above fields.</span>
+            </fieldset>
+
+            <fieldset id="other-field">
+                <!-- Message field-->
+                <label for="message">Message</label>
+                <textarea name="message" rows="5" id="message"></textarea>
+
+                <!-- Mailing list checkbox -->
+                <label for="mailList">
+                    <input type="checkbox" name="mailList" id="mailList">Please add me to your mailing list
+                </label>
+
+                <!-- Format radio buttons -->
+                <div id="format-options">
+                    <label>Choose a format:</label>
+                    <label for="format-btn-html">
+                        <input type="radio" name="format" id="format-btn-html" value="HTML">
+                        HTML
+                    </label>
+                    <label for="format-btn-text">
+                        <input type="radio" name="format" id="format-btn-text" value="Text">
+                        Text
+                    </label>   
+                </div> 
+                <span class="error-msg" id="error-format">Please select <em>one</em> of the above formats.</span>
+            </fieldset>
+
+            <!-- Submit button -->
+            <div id="btn-containter">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

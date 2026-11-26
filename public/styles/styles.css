@@ -1,0 +1,855 @@
+* {
+    box-sizing: border-box;
+}
+
+/* General/Global Stylings */
+
+#header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
+}
+
+body {
+    width: 90%;
+    margin: 1rem auto;
+    font-size: 16px;
+    background-color: var(--midnight-whisper);
+    color: var(--platinum);
+}
+
+:root {
+    --curb: 5px;
+    --field-border: solid 2px rgb(97, 94, 94);
+    --crimson: #990000;
+    --carolina-blue: #95adf4;
+    --midnight-whisper: #262626;
+    --platinum: #eaeaea;
+    --spacer-thin: 0.5rem;
+    --spacer-standard: 1rem;
+    --spacer-extra: 1.5rem;
+    --spacer-plus: 2.5rem;
+}
+
+/* Google Fonts */
+.gothic {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gothic-thin {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Nav bar styings */
+#nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: solid 2.5px var(--platinum);
+}
+
+.nav-links, .proj-link {
+    color: var(--platinum);
+    text-decoration: none;
+    border-left: var(--carolina-blue) solid 2px;
+    padding-left: 0.5rem;
+    margin: 0.75rem;
+}
+
+.nav-links:hover, .proj-link:hover {
+    color: var(--carolina-blue);
+    font-weight: 600;
+}
+
+/* Home Stylings */
+#home-main, #contact-main, #admin-main, #projects-main {
+    margin: auto;
+    border-radius: var(--curb);
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
+}
+
+#admin-main {
+    padding: 2rem 2rem;
+}
+
+/* Contact Form Stylings */
+#contact-form {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacer,
+.error-msg {
+    visibility: hidden;
+    width: 100%;
+    margin: 0.25rem 0;
+    padding: 0.25rem;
+}
+
+#contact-info,
+#meet-info,
+#other-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 18.75rem;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: var(--curb);
+}
+
+fieldset {
+    border: none;
+}
+
+#contact-form {
+    margin: 0 auto;
+}
+
+.row-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    margin: 0.5rem 0 0 0;
+}
+
+#message {
+    resize: none;
+    width: 18.125rem;
+    margin: 0 auto 1rem auto;
+}
+
+#other-field {
+    align-items: flex-start;
+}
+
+#format-options {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 0;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#format-options>label {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#format-options>label>input[type="radio"] {
+    width: 33%;
+}
+
+
+/* Label and Input stylings */
+label {
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+#meet-other {
+    width: 18.125rem;
+    height: 2rem;
+    border-radius: var(--curb);
+    border: var(--field-border);
+}
+
+input[type="radio"] {
+    margin: 0;
+}
+
+select {
+    width: 100%;
+    height: 2rem;
+    border: var(--field-border);
+    border-radius: var(--curb);
+}
+
+textarea {
+    border: var(--field-border);
+    border-radius: var(--curb);
+}
+
+/* Error Message Stylings */
+.error-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.error-row-widescreen {
+    display: none;
+}
+
+.error-msg {
+    text-align: left;
+    background-color:var(--carolina-blue);
+    color: var(--midnight-whisper);
+    font-weight: bold;
+    border-radius: var(--curb);
+}
+
+#other-field > #error-format {
+    width: 100%;
+}
+
+/* Button container stylings */
+#btn-containter {
+    width: 20.375rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 auto 1rem 1.4rem;
+}
+
+button[type="submit"] {
+    background-color: var(--carolina-blue);
+    border-radius: var(--curb);
+    border: none;
+    color: var(--platinum);
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    width: 5.625rem;
+}
+
+/* Table stylings */
+#admin-table {
+    margin: 1rem auto;
+    width: 100%;
+    border: solid 2px var(--carolina-blue);
+}
+
+#admin-table > tbody > tr.child > td > ul {
+    margin-left: -2rem;
+}
+
+#admin-table li {
+    list-style-type: none;
+}
+
+#admin-table th {
+    background-color: var(--carolina-blue);
+    border: none;
+    color: var(--platinum);
+}
+
+.dtr-title {
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
+/* Resume Stylings */
+#resume-main body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--midnight-whisper);
+    color: var(--platinum);
+    margin: 0 auto 5rem auto;
+    max-width: 1200px;
+}
+
+#resume-main {
+    margin: 0 auto;
+}
+
+#resume-main ul {
+    padding-left: 0;  /* Removes the annoying auto left space*/
+}
+
+#resume-main p {
+    margin: 0.55rem;
+}
+
+.subsec {
+    background-color: var(--midnight-whisper);
+    box-shadow: -10px 10px 0px -7px var(--carolina-blue);
+    padding: var(--spacer-thin) var(--spacer-extra);
+}
+
+#resume-main h2 {
+    text-decoration: underline var(--carolina-blue) 3px;
+}
+
+
+#resume-main h3 {
+    text-decoration: underline var(--carolina-blue) 3px;
+    margin: var(--spacer-standard) 0 var(--spacer-thin) var(--spacer-thin);
+}
+
+.card, .subsec > h2 {margin-left: var(--spacer-thin);}
+
+.card {
+    border-bottom: var(--platinum) 1px solid;
+    border-left: var(--platinum) 1px solid;
+    margin-bottom: var(--spacer-extra)
+}
+
+#resume-main section > .card:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Header Section Stylings */
+#header-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacer-standard) auto 0 auto;
+}
+
+#header-section > h1 {
+    background-color: var(--carolina-blue);
+    color: var(--midnight-whisper);
+    padding: var(--spacer-thin);
+    text-align: left;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* Summary Section Stylings */
+#summary {
+    display: grid;
+        grid-template-areas: 
+        "sum-hd"
+        "profile"
+        "sum-txt";
+    padding-bottom: var(--spacer-extra);
+}
+
+#summary > h2 {
+    grid-area: sum-hd;
+    margin-top: var(--spacer-thin);
+    margin-left: var(--spacer-thin);
+}
+
+#summary > p {
+    grid-area: sum-txt;
+    text-align: left;
+    margin-left: var(--spacer-extra);
+    margin-top: var(--spacer-extra);
+}
+
+#profile {
+    grid-area: profile;
+    width: 190px;
+    height: 190px;
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
+}
+
+.contact-info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: var(--spacer-thin) 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+.contact-info > li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    font-weight: 600;
+}
+
+.contact-links > a {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 260px;
+    font-weight: 600;
+    color: var(--platinum);
+    text-decoration: none;
+}
+
+.contact-links a:hover, .contact-links a:focus {
+    color: var(--carolina-blue);
+}
+
+/* Skills and Certifications Section */
+#skills, #certs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+#skills > li,
+#certs > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+#skills > li > .icon,
+#certs > li > .icon {
+    margin: 0.25rem 0.5rem;
+}
+
+#skills > li > strong {
+    margin-right: 0.35rem;
+    margin-left: 0.5rem;
+}
+
+#certs > li > strong {
+    margin-right: 0.35rem;
+}
+
+.icon, .tech-list-icon  {
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-right: 0.25rem;
+    border: none;
+}
+
+/*Resume Stylings - Header Section Stylings */
+#header-section > h1 {text-align: center;}
+
+/* Global/General Styles */
+#resume-main h3 {
+    margin-bottom: var(--spacer-thin);
+    margin-left: var(--spacer-thin);
+}
+
+.contact-info {
+    gap: 0.5rem;
+    justify-content: flex-start;
+    margin: 0 var(--spacer-thin);
+}
+
+.contact-info > li, 
+.contact-links > a {
+    width: 100%;
+}
+
+/* Summary Section Stylings */
+#summary > p {
+    text-align: left;
+    margin-left: var(--spacer-thin);
+    margin-top: var(--spacer-standard);
+}
+
+#profile {
+    margin-left: var(--spacer-standard);
+}
+
+.subsec {
+    padding: var(--spacer-thin);
+    min-width: 340px;
+}
+
+/* Skills and Certifications Section */
+#skills {
+    display: none;
+}
+
+#skills-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+#skills-mobile > strong {
+    margin: var(--spacer-thin) 0 var(--spacer-thin) var(--spacer-thin);
+}
+
+.skills-ribbon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-ribbon > img {
+    margin-left: var(--spacer-thin);
+}
+
+.skills-box {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 0.25rem;
+}
+
+.skills-box > p {
+    margin: 0.25rem 0.5rem;
+}
+
+#certs > li {
+    font-size: 14px;
+}
+
+#skills > li > .icon,
+#certs > li > .icon {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0.25rem 0.2rem;
+}
+
+/* Education Section Stylings */
+.title-mark {
+    border-left: var(--carolina-blue) solid 2px;
+    margin-right: 0.25rem;
+}
+
+/* Project Page Stylings */
+#projects-main { 
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-tile {
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 10px 0px -7px var(--platinum), 10px -10px 0px -7px var(--platinum);
+    margin: 2rem auto;
+    width: 95%;
+    padding: 1rem;
+}
+
+.projects-tile > h2 {
+    margin-bottom: 0.5rem;
+}
+
+.projects-tile > h3 {
+    margin-bottom: 0.25rem;
+}
+
+.proj-tech-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+    margin: 0.25rem auto;
+}
+
+.proj-tech-list li {
+    list-style-type: none;
+    color: var(--platinum);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.25rem;
+}
+
+
+.projects-tile > h2 {
+    color: var(--carolina-blue);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.projects-tile > .proj-img {
+    border: solid 1px var(--carolina-blue);
+}
+
+.proj-link {
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0.25rem;
+}
+
+/* Responsive Stylings - Half-width and Tablet screens - Primary */
+@media screen and (min-width: 36.5rem) {
+
+    #header {
+        padding-top: 1rem;
+    }
+
+    #header > h1 {
+        margin: 0;
+    }
+
+    /* Nav bar stylings */
+    #nav-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .row-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5rem 2.5rem 1fr;
+    }
+
+    .error-msg {
+        visibility: hidden;
+        align-self: baseline;
+        max-width: 9.313rem;
+        margin: 0.5rem;
+    }
+
+    #meet-info > .error-msg {
+        max-width: 100%;
+        margin: auto 0;
+    }
+
+    #other-field > #error-format {
+        max-width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    #contact-form {
+        max-width: 75rem;
+    }
+
+    #contact-info,
+    #meet-info,
+    #other-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 34.25rem;
+    }
+
+    #other-field {
+        align-items: flex-start;
+    }
+
+    #contact-info>.row>.row-box>input[type="text"],
+    #contact-info>.row>.row-box>input[type="email"] {
+        width: 9.313rem;
+        margin: 0 0.5rem;
+    }
+
+    .error-row-widescreen {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
+
+    #contact-info>.row>.row-box>label,
+    #meet-info>.row>.row-box>label {
+        padding-left: 0.65rem;
+    }
+
+    #meet-info>.row>.row-box>#meet-list-label {
+        padding-left: 0.15rem;
+    }
+
+    select {
+        display: block;
+        margin-right: 0.5rem;
+    }
+
+    #format-options {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem 0 0;
+        width: 25rem;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    /* Meeting Info stylings */
+    #meet-other {
+        width: 14.8rem;
+        margin-left: 0.5rem;
+    }
+
+    #message {
+        width: 97%;
+        margin: 0.25rem 0 0.5rem 0;
+    }
+
+    /* Button container stylings */
+    #btn-containter {
+        width: 30rem;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 0 auto 1rem 1rem;
+    }
+
+    button[type="submit"] {
+        width: 6rem;
+        height: 2rem;
+        font-size: 1.25rem;
+        padding: 4px;
+    }
+
+    #certs > li {
+        font-size: 16px;
+    }
+}
+
+/* Responsive Stylings - Half-width and Tablet screens - Supplemental */
+@media screen and (min-width: 36.5rem) {
+    .row {
+        width: 100%;
+    }
+
+    #message {
+        width: 100%;
+        margin: 0.25rem 0 0.5rem 0;
+    }
+}
+
+/* Responsive Stylings - Full-screen Desktop */
+@media screen and (min-width: 75rem) {
+    #main {
+        max-width: 59.063rem;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        margin: 1rem;
+        text-align: left;
+    }
+
+    #contact-form {
+        margin: 1rem;
+    }
+
+    #contact-info,
+    #meet-info,
+    #other-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 56.25rem;
+    }
+
+    #other-field {
+        align-items: flex-start;
+    }
+
+    #meet-info > .error-msg, 
+    #other-field > #error-format {
+        max-width: 52.75rem;
+        margin: 0.5rem;
+    }
+
+    .error-msg {
+        visibility: hidden;
+        margin: 0.25rem 1rem 0.5rem 0.75rem;
+        max-width: 16.25rem;
+        margin: 0.5rem;
+    }
+
+    #contact-info>.row>.row-box>input[type="text"],
+    #contact-info>.row>.row-box>input[type="email"] {
+        width: 16.25rem;
+        margin: 0 0.5rem;
+    }
+
+    #meet-info>.row>.row-box>input,
+    select {
+        width: 25.625rem;
+        margin: auto 0.5rem;
+    }
+
+    #other-field > label:nth-child(1) {
+        padding-left: 1rem;
+    }
+    #message {
+        width: 97%;
+        margin: 1rem auto;
+    }
+
+
+    /* Button container stylings */
+    #btn-containter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto 1rem 1.5rem;
+    }
+
+    button[type="submit"] {
+        width: 10rem;
+        height: 2.75rem;
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+
+    /*Resume Stylings */
+    #summary {
+        display: grid;
+        grid-template-areas: 
+            "sum-hd sum-hd"
+            "profile sum-txt";
+    }
+
+    #skills-mobile {
+        display: none;
+    }
+
+    #skills, #certs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    /* Project Page Stylings */
+
+    .projects-tile {
+        width: 52.375rem;
+    }
+
+    .projects-tile > .proj-img {
+        border: solid 1px var(--carolina-blue);
+        max-width: 53.75rem;
+    }
+}
+
