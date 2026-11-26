@@ -9,7 +9,7 @@
     <main id="contact-main" class="gothic-thin">
         <!-- Form -->
         <form action="/confirm" method="post" id="contact-form">
-            <% if (errors) { %>
+            <% if (locals.errors && errors.length > 0) { %>
                 <p><strong>Error in form submission.</strong></p>
                 <% errors.forEach(error => { %>
                     <p><em><%= error %></em></p>
@@ -94,7 +94,7 @@
 
                 <!-- Mailing list checkbox -->
                 <label for="mailList">
-                    <input type="checkbox" name="mailList" id="mailList">Please add me to your mailing list
+                    <input type="checkbox" name="mailList" id="mailList" value="Yes">Please add me to your mailing list
                 </label>
 
                 <!-- Format radio buttons -->
