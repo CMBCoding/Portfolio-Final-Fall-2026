@@ -69,6 +69,16 @@ body {
     font-weight: 600;
 }
 
+a {
+    color: var(--carolina-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
 /* Home Stylings */
 #home-main, #contact-main, #admin-main, #projects-main {
     margin: auto;
