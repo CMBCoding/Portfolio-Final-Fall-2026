@@ -85,6 +85,17 @@ a:hover, a:focus {
     border-radius: var(--curb);
     box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
 }
+#home-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#home-main h1 {
+    text-align: center;
+}
 
 #admin-main {
     padding: 2rem 2rem;
