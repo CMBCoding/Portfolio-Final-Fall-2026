@@ -32,6 +32,9 @@ export function validateFormData(data) {
     //Get and store the linkedIn
     const linkedIn = (data.linkedIn || "").trim();
 
+    //Get and store the value of the other feild
+    const meetOther = (data.meetOther).trim();
+
     //If the mail list is selected.
     if (mailListYes) {
         if (email === "") {
@@ -54,9 +57,9 @@ export function validateFormData(data) {
     }
 
     //Validate the meeting vector
-    const validMeetingVectors = ["none", "In person", "Through an associate", "Through social media"];
+    const validMeetingVectors = ["In person", "Through an associate", "Through social media"];
     //If the values sent in from the data does not contain the above methods
-    if (!validMeetingVectors.includes(data.meetList)) {
+    if (!validMeetingVectors.includes(data.meetList) && meetOther === "") {
         errors.push("Meeting vector is undefined.")
     }
 

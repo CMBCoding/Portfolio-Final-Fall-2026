@@ -8,16 +8,6 @@
     call the wipeErrors() */
     wipeErrors();
 
-    //Create a regular expression that tests for emails
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    /* Checks for [any string of characters] + 
-    [@] + [any string of characters] + 
-    [.] + [any string of characters] */
-
-    const liRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/.*/;
-    /* Checks for [https or not] + [www. or not] + [linkedin.com] +
-     [any string of characters] */
-
     let meet = "";
 
     //Create and assign variables for the form elements
@@ -40,59 +30,6 @@
     let mailList = document.getElementById("mailList");
     //Get the value of meet-other, trim and store it.
     let message = document.getElementById("message").value.trim();
-    
-    // // If the first name input has no entry...
-    // if (fname === "") {
-    //     valid = false; //Invalidate the validation.
-    //     //Display the error message.
-    //     document.getElementById("error-f-name").style.visibility = "visible";
-    // }
-
-    // //If the last name input has no entry...
-    // if (lname === "") {
-    //     valid = false; //Invalidate the validation.
-    //     //Display the error message.
-    //     document.getElementById("error-l-name").style.visibility = "visible";
-    // }
-
-    //If the email is not the correct format...
-    // if ((email != "") && (!emailRegex.test(email))) {
-    //     valid = false; //Invalidate the validation.
-    //     //Display the error message.
-    //     document.getElementById("error-email").style.visibility = "visible";
-    // }
-
-    //If the LinkedIn link is not in the correct format...
-    // if (linkedIn != "" && (!liRegex.test(linkedIn))) {
-    //     valid = false; //Invalidate the validation.
-    //     document.getElementById("error-li").style.visibility = "visible";
-    // }
-
-    // //If the there is nothing selected for "How we met section"...
-    // if ((meetList === "none" ) && (meetOther === "")) {
-    //     valid = false; //Invalidate the validation.
-    //     //Display the error message.
-    //     document.getElementById("error-meet").style.visibility = "visible";
-    // };
-
-    // //If both 'how we met' fields are selected...
-    // if ((meetList !== "none") && (meetOther !== "")) {
-    //     valid = false; //Invalidate the validation.
-    //     //Display the error message.
-    //     document.getElementById("error-meet").style.visibility = "visible";
-    // };
-
-    //If the user checks mail-list and they have not provided a valid email...
-    // if ((mailList.checked === true) && (email === "")) {
-    //     valid = false; //Invalidate the validation.
-    //     document.getElementById("error-email").style.visibility = "visible";
-    // }
-
-    //If the user checks mailList and not one of the formats
-    // if ((mailList.checked === true && (email === ""))) {
-    //     valid = false; //Invalidate the validation.
-    //     document.getElementById("error-format").style.visibility = "visible";
-    // }
 
     return valid;
  };
