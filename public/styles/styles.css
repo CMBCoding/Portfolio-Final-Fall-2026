@@ -217,6 +217,12 @@ textarea {
     box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
 }
 
+#login-field {
+    margin: 5rem auto;
+    width: 19.75rem;
+    padding: 0.75rem;
+}
+
 legend, #login-error {
     background-color: var(--carolina-blue);
     color: var(--midnight-whisper);
@@ -777,6 +783,7 @@ button[type="submit"] {
         height: 2rem;
         font-size: 1.25rem;
         padding: 4px;
+        margin-left: 1.3rem;
     }
 
     #certs > li {
@@ -789,9 +796,10 @@ button[type="submit"] {
     }
 
     /* Login Page Stylings */
-    legend, button[type="submit"] {
-        width: 18.75rem; 
+    #login-field button[type="submit"] {
+        width: 18.125rem;
         height: 2rem;
+        margin-left: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -799,7 +807,7 @@ button[type="submit"] {
     }
 
     #login-error {
-        width: 18.75rem;
+        width: 18.125rem;
     }
 }
 
@@ -936,9 +944,18 @@ button[type="submit"] {
         width: 20.75rem; 
     }
 
-    #login-field  button[type="submit"] {
+    #contact-main button[type="submit"] {
+        width: 10rem; 
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #login-field button[type="submit"] {
         font-size: 1.25rem;
         height: 2rem;
+        width: 20.75rem;
     }
 
     #login-field {
