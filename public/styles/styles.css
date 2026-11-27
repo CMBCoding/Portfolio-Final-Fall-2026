@@ -93,7 +93,7 @@ a:hover, a:focus {
     padding: 1rem;
 }
 
-#home-main h1 {
+#home-main h1, #home-main p {
     text-align: center;
 }
 
